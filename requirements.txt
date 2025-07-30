@@ -1,0 +1,14 @@
+ctypes
+key_control
+keyboard
+mss
+numpy
+opencv-python
+os
+re
+stable-baselines3
+tensorflow
+time
+torch
+torchsummary
+ultralytics
