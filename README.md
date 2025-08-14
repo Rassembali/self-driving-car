@@ -1,4 +1,4 @@
-# 🚗 Self-Driving Car in GTA V — Hybrid AI Approach
+# ​ Self-Driving Car in GTA V — Hybrid AI Approach
 
 **Autonomous navigation in a simulated open-world environment using computer vision, supervised learning, and reinforcement learning.**
 
@@ -6,7 +6,7 @@
 
 ---
 
-## 📌 Overview
+## ​ Overview
 This project implements and evaluates a self-driving car system inside the **Grand Theft Auto V** simulation environment.
 
 It combines:
@@ -18,17 +18,17 @@ The agent drives **using only visual input** — no GPS, LiDAR, or radar.
 
 ---
 
-## 🎯 Objectives
+## ​ Objectives
 - Develop a **visual-only** self-driving system.
-- Explore lane detection, semantic segmentation, behavioral cloning, and PPO reinforcement learning.
+- Explore lane detection, semantic segmentation, behavioral cloning, and PPO.
 - Compare **pure supervised** vs **hybrid supervised+RL** approaches.
 - Deploy in real-time simulation.
 
 ---
 
-## 🛠️ Methodology
+## ​​ Methodology
 
-### 1️⃣ Perception: Semantic Segmentation
+### ​​​ Perception: Semantic Segmentation
 - Dataset: *Playing for Data* GTA V dataset (TU Darmstadt)
 - Classes used: Road, Sidewalk, Car, Person
 - Best Model: **YOLOv8**
@@ -43,11 +43,10 @@ The agent drives **using only visual input** — no GPS, LiDAR, or radar.
 
 ---
 
-### 2️⃣ Control Approaches
+### ​​​ Control Approaches
 
 #### **Supervised Learning — Behavioral Cloning**
-- **Best Model:** CNN V2 (DeepDriveNet)  
-  Validation accuracy: **76.7%**
+- **Best Model:** CNN V2 (DeepDriveNet) — Validation accuracy: **76.7%**
 - **Training Comparison:**
 ![Validation Accuracy Comparison](outputs/images/validation_accuracy_comparison.png)
 ![Validation Loss Comparison](outputs/images/validation_comparison.png)
@@ -68,43 +67,44 @@ The agent drives **using only visual input** — no GPS, LiDAR, or radar.
 
 #### **Hybrid Model**
 - Start with supervised CNN policy.
-- Fine-tune with PPO to improve recovery & adaptability.
+- Fine-tune with PPO for better recovery & adaptability.
 
 ---
 
-## 📊 Results
+## ​ Results
 
 | Metric              | Supervised CNN | Hybrid (CNN + PPO) |
-|--------------------|---------------|--------------------|
-| Training Speed     | Fast          | Slower             |
-| Highway Driving    | Good          | Very Good          |
-| City Driving       | Weak          | Moderate           |
-| Recovery Ability   | Weak          | Strong             |
-| Adaptability       | Low           | High               |
-| Inference Speed    | Very Fast     | Fast               |
+|---------------------|----------------|---------------------|
+| Training Speed      | Fast           | Slower              |
+| Highway Driving     | Good           | Very Good           |
+| City Driving        | Weak           | Moderate            |
+| Recovery Ability    | Weak           | Strong              |
+| Adaptability        | Low            | High                |
+| Inference Speed     | Very Fast      | Fast                |
 
 ---
 
-## 🖥️ Deployment
+## ​​ Deployment
 
-Two real-time pipelines implemented:
+Implemented two real-time pipelines:
 
-1. **CNN Deployment**
-   - Capture → Preprocess (grayscale) → Predict → Map to keypress → Drive in GTA V
-
-2. **PPO Deployment**
-   - Capture → Preprocess → PPO policy predicts → Map to keypress → Drive
+1. **CNN Deployment** — captures frame, preprocesses, predicts action → maps to keypress → drives in GTA V  
+2. **PPO Deployment** — captures frame, preprocesses, PPO predicts action → maps to keypress → drives in GTA V
 
 ---
 
-## 📽️ Demo Video
+## ​​ Demo Video
 
-🎥 **Watch the self-driving agent in action:**  
-[![Watch the demo](outputs/images/segmented_output.jpg)](drive_test.mp4)
+🎥 **Watch the self-driving agent in action**
 
-Click the image above to view the video in your browser.  
-You can also download and run locally:
+[![Watch the demo on YouTube](https://img.youtube.com/vi/20gzebXrHhk/maxresdefault.jpg)](https://youtu.be/20gzebXrHhk)
+
+> Click the image above to watch the full demonstration on YouTube.
+
+---
+
+## ​​ Installation
 ```bash
-mpv drive_test.mp4
-# or
-vlc drive_test.mp4
+git clone https://github.com/Rassembali/self-driving-car.git
+cd self-driving-car
+pip install -r requirements.txt
