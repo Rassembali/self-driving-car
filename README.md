@@ -49,7 +49,7 @@ The agent drives **using only visual input** — no GPS, LiDAR, or radar.
 - **Best Model:** CNN V2 (DeepDriveNet)  
   Validation accuracy: **76.7%**
 - **Training Comparison:**
-![Validation Accuracy Comparison](outputs/images/validation_accuracy comparison.png)
+![Validation Accuracy Comparison](outputs/images/validation_accuracy_comparison.png)
 ![Validation Loss Comparison](outputs/images/validation_comparison.png)
 
 ---
@@ -98,13 +98,13 @@ Two real-time pipelines implemented:
 ---
 
 ## 📽️ Demo Video
-*(Will be added once uploaded)*  
-📺 **[Watch Demonstration](drive_test.mp4)**
 
----
+🎥 **Watch the self-driving agent in action:**  
+[![Watch the demo](outputs/images/segmented_output.jpg)](drive_test.mp4)
 
-## ⚙️ Installation
+Click the image above to view the video in your browser.  
+You can also download and run locally:
 ```bash
-git clone https://github.com/Rassembali/self-driving-car.git
-cd self-driving-car
-pip install -r requirements.txt
+mpv drive_test.mp4
+# or
+vlc drive_test.mp4
